@@ -1,0 +1,16 @@
+#!/bin/sh
+
+SRCCONFIG="/tmp/src/config"
+SRCPATCH="/tmp/src/patch"
+
+if [ -d $SRCCONFIG ]; then
+    echo "Copying custom config files..."
+    cp -rfv $SRCCONFIG/* $AMQ_HOME/conf/
+    echo "Done"
+fi
+
+if [ -d $SRCPATCH ]; then
+   echo "Copying custom lib files..."
+    cp -rfv $SRCPATCH/lib/* $AMQ_HOME/lib/
+    echo "Done"
+fi
