@@ -1,4 +1,5 @@
 #!/bin/sh
+# Called during the image build life cycle.
 
 SRCCONFIG="/tmp/src/config"
 SRCPATCH="/tmp/src/patch"
@@ -10,7 +11,7 @@ if [ -d $SRCCONFIG ]; then
 fi
 
 if [ -d $SRCPATCH ]; then
-   echo "Copying custom lib files..."
+    echo "Patching lib folder..."
     cp -rfv $SRCPATCH/lib/* $AMQ_HOME/lib/
     echo "Done"
 fi

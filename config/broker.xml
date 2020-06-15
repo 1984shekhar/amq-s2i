@@ -34,18 +34,18 @@
 
         <security-settings>
             <security-setting match="#">
-                <permission type="createNonDurableQueue" roles="admin" />
-                <permission type="deleteNonDurableQueue" roles="admin" />
-                <permission type="createDurableQueue" roles="admin" />
-                <permission type="deleteDurableQueue" roles="admin" />
-                <permission type="createAddress" roles="admin" />
-                <permission type="deleteAddress" roles="admin" />
-                <permission type="consume" roles="admin" />
-                <permission type="browse" roles="admin" />
-                <permission type="send" roles="admin" />
-                <permission type="manage" roles="admin" />
+               <permission type="createNonDurableQueue" roles="admin"/>
+               <permission type="deleteNonDurableQueue" roles="admin"/>
+               <permission type="createDurableQueue" roles="admin"/>
+               <permission type="deleteDurableQueue" roles="admin"/>
+               <permission type="createAddress" roles="admin"/>
+               <permission type="deleteAddress" roles="admin"/>
+               <permission type="consume" roles="admin,user"/>
+               <permission type="browse" roles="admin,user"/>
+               <permission type="send" roles="admin,user"/>
+               <permission type="manage" roles="admin,user"/>
             </security-setting>
-        </security-settings>
+         </security-settings>
 
         <address-settings>
             <address-setting match="activemq.management#">
