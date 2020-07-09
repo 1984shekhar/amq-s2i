@@ -93,6 +93,8 @@ echo '{"kind":"ServiceAccount","apiVersion":"v1","metadata":{"name":"amq-service
 oc policy add-role-to-user view system:serviceaccount:$PROJECT_NAME:amq-service-account
 curl -o /tmp/broker.yaml $TEMPLATE
 
+oc import-image amq7/amq-broker:7.7 --confirm --scheduled --from=registry.redhat.io/amq7/amq-broker:7.7
+
 # deploy the broker (set custom image repository here)
 oc process -f /tmp/broker.yaml \
     -p APPLICATION_NAME="$PROJECT_NAME" \
